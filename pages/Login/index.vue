@@ -16,13 +16,13 @@ async function handleLogin() {
 </script>
 
 <template>
+  <div class="logo1">
   <div class="container-fluid">
-    <div class="logo1">
       <div>
         <img src="assets/img/logo.png" alt="logo" class="logo" />
         <h1>APOTEX XYZ</h1>
       </div>
-    </div>
+  
     <form @submit.prevent="handleLogin">
       <div class="mb-3">
         <input v-model="email" type="email" class="form-control form-control-lg rounded-2 border-dark" placeholder="email" />
@@ -33,23 +33,26 @@ async function handleLogin() {
       <button type="submit" class="btn btn-success text-white rounded-2 px-4 text-center">LOGIN</button>
     </form>
   </div>
+  </div>
 </template>
 
 <style scoped>
 .container-fluid {
-  background-color: #87bc9c;
-  width: 100vw;
-  
-}
-.logo1 {
+  height: 100vh;
   display: flex;
   justify-content: center;
-  margin-top: 120px;
+  align-items: center;
+  flex-direction: column;
+  width: 35%;
+}
+.logo1 {
+  background-color: #87bc9c;
+ 
 }
 .form-control {
   margin-bottom: 6px;
-  width: 30%;
-  margin-left: 35%;
+  width: 100%;
+
 }
 h1 {
   margin-top: 15px;
@@ -60,7 +63,6 @@ h1 {
   margin-left: 30%;
 }
 .btn {
-  margin-left: 47%;
   background-color: #019901 !important;
 }
 </style>
