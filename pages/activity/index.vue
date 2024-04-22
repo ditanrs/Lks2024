@@ -1,0 +1,33 @@
+<template>
+  <div class="container-fluid">
+    <div class="text-center mt-5">
+      <h3>Log Activity</h3>
+    </div>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <td>No</td>
+          <td>email</td>
+          <td>Tanggal/Waktu</td>
+          <td>Nama</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<style scoped>
+table {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 5%;
+}
+</style>
