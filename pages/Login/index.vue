@@ -1,38 +1,53 @@
 <script setup>
+import { errorMessages } from "vue/compiler-sfc";
+
 definePageMeta({
   layout: "login",
 });
-const supa = useSupabaseClient();
+const supabase = useSupabaseClient();
 const email = ref("");
 const password = ref("");
 
 async function handleLogin() {
-  const { data, error } = await supa.auth.signInWithPassword({
-    email: email.value,
-    password: password.value,
-  });
-  if (!error) navigateTo("/");
+  const { data, error } = await supabase.from("users").select("id,email").eq("email", email.value);
+  if (error) throw error;
+  if (data) {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email.value,
+      password: password.value,
+    });
+    if (error) {
+      errorMessages = true;
+      console.error(error);
+    } else {
+      const { error } = await supabase.from("log").insert({
+        aktivitas: "Login",
+        id_user: data[0].id,
+      });
+    }
+    if (!error) navigateTo("/");
+  }
 }
 </script>
 
 <template>
   <div class="logo1">
-  <div class="container-fluid">
+    <div class="container-fluid">
       <div>
         <img src="assets/img/logo.png" alt="logo" class="logo" />
         <h1>APOTEX XYZ</h1>
       </div>
-  
-    <form @submit.prevent="handleLogin">
-      <div class="mb-3">
-        <input v-model="email" type="email" class="form-control form-control-lg rounded-2 border-dark" placeholder="email" />
-      </div>
-      <br />
-      <input v-model="password" type="password" class="form-control form-control-lg rounded-2 border-dark" placeholder="password" />
-      <br />
-      <button type="submit" class="btn btn-success text-white rounded-2 px-4 text-center">LOGIN</button>
-    </form>
-  </div>
+
+      <form @submit.prevent="handleLogin">
+        <div class="mb-3">
+          <input v-model="email" type="email" class="form-control form-control-lg rounded-2 border-dark" placeholder="email" />
+        </div>
+        <br />
+        <input v-model="password" type="password" class="form-control form-control-lg rounded-2 border-dark" placeholder="password" />
+        <br />
+        <button type="submit" class="btn btn-success text-white rounded-2 px-4 text-center">LOGIN</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -47,12 +62,10 @@ async function handleLogin() {
 }
 .logo1 {
   background-color: #87bc9c;
- 
 }
 .form-control {
   margin-bottom: 6px;
   width: 100%;
-
 }
 h1 {
   margin-top: 15px;

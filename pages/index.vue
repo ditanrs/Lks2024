@@ -13,14 +13,16 @@ const user = useSupabaseUser();
       <thead class="table-dark">
         <tr>
           <td>No</td>
+          <td>username</td>
+          <td>Waktu</td>
           <td>email</td>
-          <td>Tanggal/Waktu</td>
-          <td>Nama</td>
+          <td>aktivitas</td>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>#</td>
+          <td value="#"></td>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
@@ -28,7 +30,6 @@ const user = useSupabaseUser();
       </tbody>
     </table>
   </div>
- 
 </template>
 
 <style scoped>
