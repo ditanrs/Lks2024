@@ -8,30 +8,30 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Tipe user" />
+              <input type="text" class=" form-control-lg rounded-2 border-dark" placeholder="Tipe user" />
             </div>
             <div class="mb-3">
-              <input type="date" class="form-control form-control-lg rounded-2 border-dark" placeholder="Tanggal" />
+              <input type="date" class=" form-control-lg rounded-2 border-dark" style="width: 43%;" />
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Nama Pasien" />
+              <input type="text" class=" form-control-lg rounded-2 border-dark" placeholder="Nama Pasien" />
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Harga" />
+              <input type="number" class=" form-control-lg rounded-2 border-dark" placeholder="Harga" />
             </div>
           </div>
           <div class="col-lg-6">
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="No Resep" />
+              <input type="number" class=" form-control-lg rounded-2 border-dark" placeholder="No Resep" />
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Nama Obat" />
+              <input type="text" class=" form-control-lg rounded-2 border-dark" placeholder="Nama Obat" />
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Nama Dokter" />
+              <input type="text" class=" form-control-lg rounded-2 border-dark" placeholder="Nama Dokter" />
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Quantity" />
+              <input type="number" class=" form-control-lg rounded-2 border-dark" placeholder="Quantity" />
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
           <div class="col-lg-1">
             <label class="col-form-label">Total Bayar</label>
           </div>
-          <input type="text" class="form-control border-dark ms-5" style="width: 15%" />
+          <input type="number" class="form-control-lg border-dark ms-5" style="width: 15%" />
         </div>
         <button type="submit" class="btn btn-success text-white bg-success rounded-2 px-4 text-center mb-5 mt-3">Tambah</button>
       </form>
@@ -57,7 +57,7 @@
   background-color: #019901 !important;
 }
 input {
-  margin-left: 40%;
+  margin-left: 30%;
 }
 table {
   width: 70%;
@@ -66,7 +66,7 @@ table {
 button {
   display: flex;
   justify-content: center;
-  margin-left: 50%;
+  margin-left: 40%;
 }
 .col-auto {
   margin-left: 15%;

@@ -1,47 +1,36 @@
 <template>
   <div class="container-fluid">
-    <div class="text-center">
+    <div class="text-center mb-5">
       <h3>KELOLA RESEP</h3>
     </div>
     <div>
       <form>
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-4 ms-5">
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Tipe user" />
+              <input type="number" class=" form-control-lg rounded-2 border-dark" placeholder="No Resep" />
             </div>
             <div class="mb-3">
-              <input type="date" class="form-control form-control-lg rounded-2 border-dark" placeholder="Tanggal" />
+              <input type="text" class=" form-control-lg rounded-2 border-dark" placeholder="Nama Pasien" />
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Nama Pasien" />
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Harga" />
+              <input type="text" class=" form-control-lg rounded-2 border-dark" placeholder="Nama Obat" />
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-2">
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="No Resep" />
+              <input type="date" class=" form-control-lg rounded-2 border-dark" style="width: 45vh;" />
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Nama Obat" />
+              <input type="text" class=" form-control-lg rounded-2 border-dark" placeholder="Nama Dokter" />
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Nama Dokter" />
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control form-control-lg rounded-2 border-dark" placeholder="Quantity" />
+              <input type="number" class=" form-control-lg rounded-2 border-dark" placeholder="Quantity" />
             </div>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-1">
-            <label class="col-form-label">Total Bayar</label>
-          </div>
-          <input type="text" class="form-control border-dark ms-5" style="width: 15%" />
-        </div>
-        <button type="submit" class="btn btn-success text-white bg-success rounded-2 px-4 text-center mb-5 mt-3">Tambah</button>
+
+        <button type="submit" class="btn btn-success text-white bg-success rounded-2 px-4 text-center mb-5 mt-3">KIRIM</button>
       </form>
     </div>
   </div>
@@ -57,7 +46,7 @@
   background-color: #019901 !important;
 }
 input {
-  margin-left: 40%;
+  margin-left: 70%;
 }
 table {
   width: 70%;
@@ -66,7 +55,7 @@ table {
 button {
   display: flex;
   justify-content: center;
-  margin-left: 50%;
+  margin-left: 45%;
 }
 .col-auto {
   margin-left: 15%;

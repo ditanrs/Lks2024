@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <div class="text-center mt-5">
+    <div class="text-center mt-4 mb-5">
       <h3>Kelola Laporan</h3>
     </div>
     <h5>Laporan Penjualan</h5>
