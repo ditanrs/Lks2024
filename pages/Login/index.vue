@@ -7,24 +7,42 @@ const email = ref("");
 const password = ref("");
 
 async function handleLogin() {
-  const { error } = await supabase.auth.signInWithPassword({
+  //   console.log("login?");
+  //   console.log(email.value);
+  //   console.log(password.value);
+
+  const { data, error } = await supabase.auth.signInWithPassword({
     email: email.value,
     password: password.value,
-  })
-  if (error) throw error
-  else {
-    const { data } = await supabase.from("users").select("id").eq("email", email.value);
-    if (data) {
-      console.log(data)
-      const { error } = await supabase.from("Log_Activity").insert({
-        aktifitas: "Login",
-        id_user: data[0].id,
-      });
-      if (error) throw error
-      else navigateTo('/')
-    }
+  });
+  if (data) {
+    const user = useSupabaseUser();
+    console.log(user);
+    navigateTo("/");
   }
+  if (error) throw error;
 }
+// const { error } = await supabase.auth.signInWithPassword({
+//   email: email.value,
+//   password: password.value,
+// });
+
+//   if (!error) navigateTo("/");
+//   else {
+//     const { data } = await supabase.from("users").select("id").eq("email", email.value);
+//     if (data) {
+//       console.log(data);
+//       const { error } = await supabase.from("Log_Activity").insert([
+//         {
+//           aktifitas: "Login",
+//           id_user: data[0].id,
+//         },
+//       ]);
+//       if (error) throw error;
+//       navigateTo("/");
+//     }
+//   }
+// }
 </script>
 
 <template>
@@ -72,7 +90,7 @@ h1 {
   width: 95px;
   margin-left: 30%;
 }
-.btn {
+button {
   background-color: #019901 !important;
 }
 </style>

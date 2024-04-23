@@ -1,3 +1,6 @@
+<script setup>
+const supabase = useSupabaseClient();
+</script>
 <template>
   <nav class="navbar bg-light">
     <div class="container-fluid">
@@ -28,7 +31,10 @@
               <div class="btn1">
                 <NuxtLink to="/laporan" class="btn btn-light border-dark">Kelola Laporan</NuxtLink>
               </div>
-              <button class="btn btn-danger mt-3" type="button">Logout</button>
+              <div class="btn1">
+                <NuxtLink to="/activity" class="btn btn-light border-dark">Log Activity</NuxtLink>
+              </div>
+              <NuxtLink class="btn btn-danger mt-3" to="/Logout">Logout</NuxtLink>
             </div>
           </div>
         </div>
