@@ -1,9 +1,9 @@
 <template>
   <div class="container-fluid">
     <div class="text-center mt-4 mb-5">
-      <h3>Kelola Laporan</h3>
+      <h3>Laporan Penjualan</h3>
     </div>
-    <h5>Laporan Penjualan</h5>
+    
 
     <div class="row g-3 justify-content-center">
       <div class="col-auto">
@@ -50,8 +50,5 @@ table {
   width: 70%;
   margin-left: 15%;
   margin-top: 5%;
-}
-h5{
-    margin-left: 24%;
 }
 </style>

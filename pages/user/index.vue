@@ -1,14 +1,14 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-12">
+      
         <div class="text-center mb-5">
           <h3>KELOLA USER</h3>
         </div>
         <form>
-          <div class="mb-3">
+          <div class="mb-3 container">
             <div class="row">
-              <div class="col-lg-3">
+              <div class="col-lg-6 pt-2">
                 <select class="form-control form-control-lg form-select rounded-2 border-dark me-5">
                   <option>Tipe User</option>
                   <option>Admin</option>
@@ -16,26 +16,29 @@
                   <option>Kasir</option>
                 </select>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-6 pt2">
                 <input type="text" class="form-control form-control-lg rounded-2 border-dark me-5 mb-4" placeholder="Username" />
               </div>
             </div>
 
             <div class="row">
-              <div class="col-lg-3">
+              <div class="col-lg-6 pt-2">
                 <input type="email" class="form-control form-control-lg rounded-2 border-dark me-5" placeholder="Email" />
               </div>
 
-              <div class="col-lg-3">
+              <div class="col-lg-6 pt-2">
                 <input type="password" class="form-control form-control-lg rounded-2 border-dark" placeholder="Password" />
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-success text-white bg-success rounded-2 px-4 text-center mb-5">Tambah</button>
+          <div class="col-lg-12">
+
+            <button type="submit" class="btn btn-success text-white bg-success rounded-2 px-4 text-center mb-5">Tambah</button>
+          </div>
         </form>
       </div>
     </div>
-  </div>
+  
 
   <div>
     <table class="table">

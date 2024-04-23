@@ -5,7 +5,9 @@ const supabase = useSupabaseClient();
   <nav class="navbar bg-light">
     <div class="container-fluid">
       <div class="col-lg-1">
-        <img src="assets/img/logo.png" alt="logo" class="logo" />
+        <NuxtLink to="/">
+          <img src="assets/img/logo.png" alt="logo" class="logo" />
+        </NuxtLink>
       </div>
       <div class="col me-5">
         <h6>APOTEK XYZ</h6>
@@ -19,7 +21,9 @@ const supabase = useSupabaseClient();
         <div class="row justify-content-center">
           <div class="col-md offset-md-2">
             <div class="offcanvas-header">
-              <img src="assets/img/admin.png" alt="admin" />
+              <NuxtLink to="/">
+                <img src="assets/img/admin.png" alt="admin" />
+              </NuxtLink>
             </div>
             <div class="d-grid gap-2">
               <div class="btn1">
