@@ -2,7 +2,22 @@
 definePageMeta({
   middleware: "auth",
 });
+const supabase = useSupabaseClient();
 const user = useSupabaseUser();
+
+const logs = ref([]);
+async function getLog() {
+  const { data, error } = await supabase.from("Log_Activity").select(`
+    *,
+    users (username)
+  `);
+  if (error) throw error;
+  if (data) logs.value = data;
+}
+
+onMounted(() => {
+  getLog();
+});
 </script>
 <template>
   <div class="container-fluid">
@@ -15,17 +30,15 @@ const user = useSupabaseUser();
           <td>No</td>
           <td>username</td>
           <td>Waktu</td>
-          <td>email</td>
           <td>aktivitas</td>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td value="#"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr v-for="(log, index) in logs">
+          <td value="#">{{ index + 1 }}</td>
+          <td>{{ log.users.username }}</td>
+          <td>{{ log.waktu }}</td>
+          <td>{{ log.aktifitas }}</td>
         </tr>
       </tbody>
     </table>

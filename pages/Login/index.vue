@@ -1,6 +1,4 @@
 <script setup>
-import { errorMessages } from "vue/compiler-sfc";
-
 definePageMeta({
   layout: "login",
 });
@@ -9,23 +7,22 @@ const email = ref("");
 const password = ref("");
 
 async function handleLogin() {
-  const { data, error } = await supabase.from("users").select("id,email").eq("email", email.value);
-  if (error) throw error;
-  if (data) {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: email.value,
-      password: password.value,
-    });
-    if (error) {
-      errorMessages = true;
-      console.error(error);
-    } else {
-      const { error } = await supabase.from("log").insert({
-        aktivitas: "Login",
+  const { error } = await supabase.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+  })
+  if (error) throw error
+  else {
+    const { data } = await supabase.from("users").select("id").eq("email", email.value);
+    if (data) {
+      console.log(data)
+      const { error } = await supabase.from("Log_Activity").insert({
+        aktifitas: "Login",
         id_user: data[0].id,
       });
+      if (error) throw error
+      else navigateTo('/')
     }
-    if (!error) navigateTo("/");
   }
 }
 </script>
